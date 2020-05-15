@@ -1,0 +1,45 @@
+.Container {
+  display: flex;
+  justify-content: space-between;
+  width: 40rem;
+  height: 4rem;
+  margin-top: 3rem;
+}
+
+.LevelButton {
+  width: 7rem;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s;
+  font: inherit;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.LevelButton:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1.2rem 3.5rem rgba(0, 0, 0, 0.2);
+}
+
+.LevelButton:active {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 1.1rem 3.2rem rgba(0, 0, 0, 0.2);
+}
+
+.LevelButton:focus {
+  outline: none;
+}
+
+.Easy {
+  background-color: cyan;
+}
+
+.Medium {
+  background-color: yellow;
+}
+
+.Hard {
+  background-color: red;
+}
