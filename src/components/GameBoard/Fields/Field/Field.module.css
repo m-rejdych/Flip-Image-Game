@@ -1,0 +1,19 @@
+.Field {
+  border-bottom: 1px solid #666;
+  border-right: 1px solid #666;
+}
+
+.Easy {
+  width: 20%;
+  height: 20%;
+}
+
+.Medium {
+  width: 12.5%;
+  height: 12.5%;
+}
+
+.Hard {
+  width: 10%;
+  height: 10%;
+}

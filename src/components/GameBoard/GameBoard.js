@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import styles from './GameBoard.module.css';
+import Fields from './Fields/Fields';
 
-class GameBoard extends Component {
-  state = {
-    fields: [],
-  };
+const gameBoard = (props) => (
+  <div className={styles.GameBoard}>
+    <Fields level={props.level} num={props.numOfFields} />
+  </div>
+);
 
-  render() {
-    return <div className={styles.GameBoard}></div>;
-  }
-}
-
-export default GameBoard;
+export default gameBoard;
