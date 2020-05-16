@@ -5,7 +5,7 @@ import Fields from './Fields/Fields';
 
 const gameBoard = (props) => (
   <div className={styles.GameBoard}>
-    <Fields level={props.level} num={props.numOfFields} />
+    <Fields colors={props.colors} level={props.level} num={props.numOfFields} />
   </div>
 );
 
