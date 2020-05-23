@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import styles from './Container.module.css';
 import GameBoard from '../../components/GameBoard/GameBoard';
 import LevelButtons from '../../components/Buttons/LevelButtons/LevelButtons';
+import EndGameHeadline from '../../components/EndGameHeadline/EndGameHeadline';
+import RestartButton from '../../components/Buttons/RestartButton/RestartButton';
 
 class Container extends Component {
   state = {
@@ -10,6 +12,8 @@ class Container extends Component {
     levelButtonsShown: true,
     numOfFields: 0,
     colors: [],
+    fieldsActivated: [],
+    endGame: false,
   };
 
   setLevelHandler = (level) => {
@@ -31,7 +35,8 @@ class Container extends Component {
   }
 
   addColorsHandler = (level) => {
-    const { colors } = this.state;
+    const newState = { ...this.state };
+    const { colors } = newState;
     let count;
     level === 'easy'
       ? (count = 8)
@@ -48,19 +53,69 @@ class Container extends Component {
       colors.push(color);
     }
 
-    this.setState({ colors });
+    const finalColors = [];
+
+    for (let i = 0; i < count * 2; i++) {
+      const random = Math.floor(Math.random() * (colors.length - 1));
+      finalColors.push(colors[random]);
+      colors.splice(random, 1);
+    }
+
+    this.setState({ colors: finalColors });
+  };
+
+  addFieldActivatedHandler = (color, id) => {
+    const newState = { ...this.state };
+    const { fieldsActivated } = newState;
+    fieldsActivated.push([color, id]);
+    this.setState({ fieldsActivated });
+  };
+
+  desactivateFieldsHandler = () => {
+    const newState = { ...this.state };
+    const { fieldsActivated } = newState;
+    fieldsActivated.splice(-2);
+
+    this.setState({ fieldsActivated });
+  };
+
+  endGameChecker = () => {
+    if (
+      this.state.fieldsActivated[this.state.fieldsActivated.length - 1][0] ===
+      this.state.fieldsActivated[this.state.fieldsActivated.length - 2][0]
+    )
+      this.setState({ endGame: true });
+  };
+
+  restartGame = () => {
+    this.setState({
+      level: null,
+      levelButtonsShown: true,
+      numOfFields: 0,
+      colors: [],
+      fieldsActivated: [],
+      endGame: false,
+    });
   };
 
   render() {
     return (
       <div className={styles.Container}>
+        {this.state.endGame ? <EndGameHeadline /> : null}
         <GameBoard
           level={this.state.level}
           numOfFields={this.state.numOfFields}
           colors={this.state.colors}
+          activateField={this.addFieldActivatedHandler}
+          fieldsActivated={this.state.fieldsActivated}
+          desactivateFields={this.desactivateFieldsHandler}
+          isEndGame={this.endGameChecker}
         />
         {this.state.levelButtonsShown ? (
           <LevelButtons click={this.setLevelHandler} />
+        ) : null}
+        {this.state.endGame ? (
+          <RestartButton restart={this.restartGame} />
         ) : null}
       </div>
     );

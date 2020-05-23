@@ -3,15 +3,12 @@
   perspective: 500px;
 }
 
-.Container:focus .FieldFront {
+.Container.Activated .FieldFront {
   transform: rotateY(180deg);
 }
 
-.Container:focus .FieldBack {
+.Container.Activated .FieldBack {
   transform: rotateY(0);
-}
-
-.FieldFront {
 }
 
 .FieldBack {

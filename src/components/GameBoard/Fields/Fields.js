@@ -8,15 +8,19 @@ const fields = (props) => {
   const fieldColors = [...props.colors];
 
   for (let i = 0; i < props.num; i++) {
-    const random = Math.floor(Math.random() * (fieldColors.length - 1));
     fieldsArr.push(
       <Field
+        activateField={props.activateField}
         key={i + 'field'}
         level={props.level}
-        color={fieldColors[random]}
+        color={fieldColors[i]}
+        colors={props.colors}
+        fieldsActivated={props.fieldsActivated}
+        desactivateFields={props.desactivateFields}
+        identificator={i}
+        isEndGame={props.isEndGame}
       />
     );
-    fieldColors.splice(random, 1);
   }
 
   return <Aux>{fieldsArr}</Aux>;
