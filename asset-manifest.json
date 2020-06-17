@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Flip-Image-Game/static/css/main.a2a55908.chunk.css",
+    "main.js": "/Flip-Image-Game/static/js/main.dad0417d.chunk.js",
+    "main.js.map": "/Flip-Image-Game/static/js/main.dad0417d.chunk.js.map",
+    "runtime-main.js": "/Flip-Image-Game/static/js/runtime-main.6a21897e.js",
+    "runtime-main.js.map": "/Flip-Image-Game/static/js/runtime-main.6a21897e.js.map",
+    "static/js/2.ca216007.chunk.js": "/Flip-Image-Game/static/js/2.ca216007.chunk.js",
+    "static/js/2.ca216007.chunk.js.map": "/Flip-Image-Game/static/js/2.ca216007.chunk.js.map",
+    "index.html": "/Flip-Image-Game/index.html",
+    "precache-manifest.f4cdc21988042640ce553f0c2d58e551.js": "/Flip-Image-Game/precache-manifest.f4cdc21988042640ce553f0c2d58e551.js",
+    "service-worker.js": "/Flip-Image-Game/service-worker.js",
+    "static/css/main.a2a55908.chunk.css.map": "/Flip-Image-Game/static/css/main.a2a55908.chunk.css.map",
+    "static/js/2.ca216007.chunk.js.LICENSE.txt": "/Flip-Image-Game/static/js/2.ca216007.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a21897e.js",
+    "static/js/2.ca216007.chunk.js",
+    "static/css/main.a2a55908.chunk.css",
+    "static/js/main.dad0417d.chunk.js"
+  ]
+}
